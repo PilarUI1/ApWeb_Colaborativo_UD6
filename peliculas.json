@@ -1,0 +1,66 @@
+[
+  {
+    "titulo": "Inception",
+    "director": "Christopher Nolan",
+    "genero": "Ciencia Ficcion",
+    "anio": 2010,
+    "sinopsis": "Un ladron que roba secretos a traves de los sueños.",
+    "imagen": "https://imagen.com/inception.jpg"
+  },
+  {
+    "titulo": "The Matrix",
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "genero": "Ciencia Ficcion",
+    "anio": 1999,
+    "sinopsis": "Un hacker descubre la verdad sobre su realidad.",
+    "imagen": "https://imagen.com/matrix.jpg"
+  },
+  {
+    "titulo": "Interstellar",
+    "director": "Christopher Nolan",
+    "genero": "Ciencia Ficcion",
+    "anio": 2014,
+    "sinopsis": "Un grupo de astronautas viaja a traves de un agujero de gusano en busca de un nuevo hogar para la humanidad.",
+    "imagen": "https://imagen.com/interstellar.jpg"
+  },
+  {
+    "titulo": "The Godfather",
+    "director": "Francis Ford Coppola",
+    "genero": "Drama",
+    "anio": 1972,
+    "sinopsis": "La historia de una familia mafiosa en Nueva York.",
+    "imagen": "https://imagen.com/godfather.jpg"
+  },
+  {
+    "titulo": "Pulp Fiction",
+    "director": "Quentin Tarantino",
+    "genero": "Crimen",
+    "anio": 1994,
+    "sinopsis": "Historias entrelazadas de crimen y redencion en Los Angeles.",
+    "imagen": "https://imagen.com/pulpfiction.jpg"
+  },
+  {
+    "titulo": "The Dark Knight",
+    "director": "Christopher Nolan",
+    "genero": "Accion",
+    "anio": 2008,
+    "sinopsis": "Batman se enfrenta al Joker, un villano que busca sumir a Gotham en el caos.",
+    "imagen": "https://imagen.com/darkknight.jpg"
+  },
+  {
+    "titulo": "Forrest Gump",
+    "director": "Robert Zemeckis",
+    "genero": "Drama",
+    "anio": 1994,
+    "sinopsis": "La vida de Forrest Gump, un hombre con discapacidad intelectual que presencia eventos historicos importantes.",
+    "imagen": "https://imagen.com/forrestgump.jpg"
+  },
+  {
+    "titulo": "The Shawshank Redemption",
+    "director": "Frank Darabont",
+    "genero": "Drama",
+    "anio": 1994,
+    "sinopsis": "Un hombre acusado injustamente de asesinato encuentra esperanza dentro de una prision.",
+    "imagen": "https://imagen.com/shawshank.jpg"
+  }
+]

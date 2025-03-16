@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Pelicula = require('../models/Pelicula');
 
-// 📌 Obtener todas las películas
+// 📌 Obtenemos todas las películas
 router.get('/', async (req, res) => {
     try {
         const peliculas = await Pelicula.find();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// 📌 Obtener una película por ID
+// 📌 Obtenemos una película por ID
 router.get('/:id', async (req, res) => {
     try {
         const pelicula = await Pelicula.findById(req.params.id);
@@ -23,21 +23,26 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// 📌 Crear una nueva película
+// 📌 Creamos una o varias películas
 router.post('/', async (req, res) => {
     try {
-        const nuevaPelicula = new Pelicula(req.body);
-        await nuevaPelicula.save();
-        res.status(201).json(nuevaPelicula);
+        // Verificamos si el cuerpo de la solicitud es un array o un objeto individual
+        const data = Array.isArray(req.body) ? req.body : [req.body];
+
+        // Insertamos múltiples películas en la base de datos
+        const peliculasInsertadas = await Pelicula.insertMany(data);
+
+        res.status(201).json({ mensaje: "Películas agregadas correctamente", peliculas: peliculasInsertadas });
     } catch (error) {
-        res.status(400).json({ error: "Error al crear la película" });
+        console.error("❌ Error al crear la película:", error);
+        res.status(400).json({ error: error.message });
     }
 });
 
-// 📌 Actualizar una película por ID
+// 📌 Actualizamos una película por ID
 router.put('/:id', async (req, res) => {
     try {
-        const peliculaActualizada = await Pelicula.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const peliculaActualizada = await Pelicula.findByIdAndUpdate(req.params.id, req.body, {new: true });
         if (!peliculaActualizada) return res.status(404).json({ error: "Película no encontrada" });
         res.json(peliculaActualizada);
     } catch (error) {
@@ -45,7 +50,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// 📌 Eliminar una película por ID
+// 📌 Eliminamos una película por ID
 router.delete('/:id', async (req, res) => {
     try {
         const peliculaEliminada = await Pelicula.findByIdAndDelete(req.params.id);

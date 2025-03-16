@@ -13,7 +13,7 @@
                         <a class="nav-link dropdown-toggle" href="/peliculas/" >Películas</a>
                         <ul class="dropdown-menu bg-dark " >
                             <% for (let pelicula of parametrosComunes['listaPeliculas']) { %>
-                                <li><a class="nav-link" href="/pelicula/<%= pelicula['id']%>"><%= pelicula['titulo']%></a></li>
+                                <li><a class="nav-link" href="/pelicula/<%= pelicula['_id']%>"><%= pelicula['titulo']%></a></li>
                             <% } %>
                         </ul>
                     </li>

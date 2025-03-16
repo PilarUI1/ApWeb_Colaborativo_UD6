@@ -1,0 +1,8 @@
+Comandos CURL:
+
+- Insertar una película: curl -X POST http://localhost:8000/api/peliculas -H "Content-Type: application/json" -d "{\"titulo\":\"Inception\",\"director\":\"Christopher Nolan\",\"genero\":\"Ciencia Ficcion\",\"anio\":2010,\"sinopsis\":\"Un ladron que roba secretos a traves de los sueños.\",\"imagen\":\"https://imagen.com/inception.jpg\"}"
+- Insertar varias películas en formato .json (fichero en la raiz del proyecto): curl -X POST http://localhost:8000/api/peliculas -H "Content-Type: application/json" -d @peliculas.json
+- Eliminar una película: curl -X DELETE http://localhost:8000/api/peliculas/ID_PELÍCULA
+- Leer una película: curl -X GET http://localhost:8000/api/peliculas/ID_PELÍCULA
+- Leer todas las películas: curl -X GET http://localhost:8000/api/peliculas/
+- Actualizar una película: curl -X POST http://localhost:8000/api/peliculas -H "Content-Type: application/json" -d "{\"titulo\":\"Inception\",\"director\":\"Christopher Nolan\",\"genero\":\"Ciencia Ficcion\",\"anio\":2010,\"sinopsis\":\"Un ladron que roba secretos a traves de los sueños.\",\"imagen\":\"https://imagen.com/inception.jpg\"}"
