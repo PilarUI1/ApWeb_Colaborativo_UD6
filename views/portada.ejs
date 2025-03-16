@@ -52,74 +52,24 @@
                 <h2>Noticias</h2>
             </header>
             <div class="container-noticias row">
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <%
+                for (let noticia of noticias) { %>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
                     <article>
                         <header>
-                            <img src="https://es.web.img3.acsta.net/c_400_225/img/d2/24/d224e87864dd3a2af25b6cbbacc6f6bf.jpg" alt="">
+                            <img src="<%=noticia['imagen']%>" alt="">
                             <h5>
-                                Los fans de 'Star Wars' compraban entradas de cine solo para ver el tráiler de 'La amenaza fantasma': hacían cola, lo veían y se iban
+                                <%=noticia['titulo']%>
                             </h5>
-    
                         </header>
-                        <button class="btn btn-sm btn-primary"  data-bs-target="#collapse-1" data-bs-toggle="collapse">leer más</button>
-                        <p class="collapse" id="collapse-1">
-                            Ahora puede que los nuevos espectadores crean que estamos mintiendo, pero cuando se estrenó La amenaza fantasma llevábamos 13 años sin ningún producto audiovisual de Star Wars, con el fandom alimentándose a base de novelas y cómics. Lo último que se emitió fue la segunda temporada de la serie infantil Los Ewoks, y desde entonces, absolutamente nada... hasta que, de pronto, George Lucas anunció que haría una nueva trilogía de precuelas. <b>Podéis imaginar la locura de unos fans hambrientos: se convirtió en un hito automático... </b>¡Mucho antes de que pudiéramos verla!
+                        <button class="btn btn-sm btn-primary"  data-bs-target="#collapse-<%=noticia['_id']%>" data-bs-toggle="collapse">leer más</button>
+                        <p class="collapse" id="collapse-<%=noticia['_id']%>">
+                            <%=noticia['texto']%>
                         </p>
-                        <address class="author"><a rel="author" href="https://www.sensacine.com/noticias/cine/noticia-1000126951/">Sensacine</a> - <time datetime="2025-02-02">02/02/2025</time></address> 
+                        <address class="author"><a rel="author" href="<%=noticia['url']%>"><%=noticia['origen']%></a> - <time datetime="<%=noticia['fecha']%>"><%=noticia['fecha']%></time></address> 
                     </article>
                 </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <article>
-                        <header>
-                            <img src="https://es.web.img3.acsta.net/c_640_360/img/94/fd/94fdc1efdf7b6b45d5cf521967931de6.jpg" alt="">
-                            <h5>
-                                Acabo de descubrir que este personaje de 'Titanic' se basa en una persona real que viajó en el barco
-                            </h5>
-    
-                        </header>
-                        <button class="btn btn-sm btn-primary"  data-bs-target="#collapse-2" data-bs-toggle="collapse">leer más</button>
-                        <p class="collapse" id="collapse-2">
-                            No todo el mundo lo sabe, pero <b>en 1994 se publicó una de las piezas perdidas de la historia del Titanic más curiosas:</b> un libro llamado Polar, the Titanic Bear que va mucho más allá del simple entretenimiento. Se trata del libro que una madre, Margaretta Corning Spedden, le regaló a su hijo en 1912 después de que ambos sobrevivieran al barco, y donde contaba el viaje, el hundimiento y el rescate desde el punto de vista de su osito de peluche, que llevaba a todos los sitios. ¿Por qué nunca se publicó? Bueno, digamos que todo toma un cariz trágico de repente.
-                        </p>
-                        <address class="author"><a rel="author" href="https://www.sensacine.com/noticias/cine/noticia-1000126950/">Sensacine</a> - <time datetime="2025-02-02">02/02/2025</time></address> 
-                    </article>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <article>
-                        <header>
-                            <img src="https://es.web.img3.acsta.net/c_640_360/img/d4/b0/d4b008b03f015ac4cbf50433aa716b6a.jpg" alt="">
-                            <h5>
-                                De los que creadores de una de las mejores películas de terror recientes nos llega 'La acompañante'
-                            </h5>
-    
-                        </header>
-                        <button class="btn btn-sm btn-primary"  data-bs-target="#collapse-3" data-bs-toggle="collapse">leer más</button>
-                        <p class="collapse" id="collapse-3">
-                            Últimamente, se nos está llenando la cartelera de <b>películas de terror que alertan sobre los posibles peligros de la inteligencia artificial,</b> como si del eco del éxito de la serie Black Mirror se tratara. Ahí tenemos, por ejemplo, la divertidísima M3GAN, un estupendo giro al tropo del muñeco diabólico; también se estrenaba hace poco Diabólica, aunque esta cinta pasó con más pena que gloria por la cartelera.
-                        </p>
-                        <address class="author"><a rel="author" href="https://www.sensacine.com/noticias/cine/noticia-1000125585/">Sensacine</a> - <time datetime="2025-01-27">27/01/2025</time></address> 
-                    </article>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <article>
-                        <header>
-                            <img src="https://es.web.img3.acsta.net/c_640_360/img/c5/23/c52314b23a32a72a72c4bac2a91627e0.jpg" alt="">
-                            <h5>
-                                "Una de esas películas destinadas a perdurar en el tiempo": el próximo 24 de enero se estrena en cines, por fin, ‘The Brutalist’
-                            </h5>
-    
-                        </header>
-                        <button class="btn btn-sm btn-primary"  data-bs-target="#collapse-4" data-bs-toggle="collapse" >leer más</button>
-                        <p class="collapse" id="collapse-4">
-                            Pocas veces asistimos a un consenso tan rotundo entre la crítica especializada como en el caso de la nueva película del cineasta Brady Corbet, director de Vox Lux: El precio de la fama. Protagonizada por el ganador del Óscar Adrien Brody, The Brutalist ha sido saludada como una gran obra maestra, una de esas películas inolvidables y que vienen a reescribir parte de la historia del cine. Ahora, por fin, se estrena exclusivamente en cines. <b>La fecha, el 24 de enero.</b> 
-                        </p>
-                        <address class="author"><a rel="author" href="https://www.sensacine.com/noticias/cine/noticia-1000124281/">Sensacine</a> - <time datetime="2025-01-20">20/01/2025</time></address> 
-                    </article>
-                </div>
-
+                <% } %>
             </div>
 
         </section>

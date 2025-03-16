@@ -17,6 +17,10 @@ aplicacion.use(express.urlencoded({ extended: true }));
 const peliculasRoutes = require('./routes/peliculas');
 aplicacion.use('/api/peliculas', peliculasRoutes);
 
+// Importar y usar las rutas de las noticias
+const noticiasRoutes = require('./routes/noticias');
+aplicacion.use('/api/noticias', noticiasRoutes);
+
 // Se establece la conexión con MongoDB
 const uri = "mongodb+srv://ASWGrupo1:ASWGrupo1@aswgrupo1.yods9.mongodb.net/ASWGrupo1?retryWrites=true&w=majority";
 
@@ -69,7 +73,9 @@ async function leerDatosComunes(req) {
 // Definimos las rutas principales
 aplicacion.get('/', async (req, res) => {
     let parametrosComunes = await leerDatosComunes(req);
-    res.render('portada', { parametrosComunes, noticias: {} });
+    let listaNoticias = await mongoose.connection.db.collection('noticias').find({}).sort({'fecha':-1}).limit(6).toArray();
+    console.log(listaNoticias);
+    res.render('portada', { parametrosComunes, noticias: listaNoticias });
 });
 
 aplicacion.get('/peliculas/', async (req, res) => {
