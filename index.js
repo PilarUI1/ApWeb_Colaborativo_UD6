@@ -74,7 +74,6 @@ async function leerDatosComunes(req) {
 aplicacion.get('/', async (req, res) => {
     let parametrosComunes = await leerDatosComunes(req);
     let listaNoticias = await mongoose.connection.db.collection('noticias').find({}).sort({'fecha':-1}).limit(6).toArray();
-    console.log(listaNoticias);
     res.render('portada', { parametrosComunes, noticias: listaNoticias });
 });
 

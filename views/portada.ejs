@@ -66,7 +66,7 @@
                         <p class="collapse" id="collapse-<%=noticia['_id']%>">
                             <%=noticia['texto']%>
                         </p>
-                        <address class="author"><a rel="author" href="<%=noticia['url']%>"><%=noticia['origen']%></a> - <time datetime="<%=noticia['fecha']%>"><%=noticia['fecha']%></time></address> 
+                        <address class="author"><a rel="author" href="<%=noticia['url']%>"><%=noticia['origen']%></a> - <time datetime="<%=noticia['fecha']%>"><%=noticia['fecha'].toLocaleDateString()%></time></address> 
                     </article>
                 </div>
                 <% } %>
