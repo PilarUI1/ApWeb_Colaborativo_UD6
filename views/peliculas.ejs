@@ -11,79 +11,17 @@
                 </h2>
             </header>
             <div class="row container-peliculas">
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="card text-center pt-2">
-                        <a href="peliculas/1.html"><img src="carteleras/1.jpg" class="card-img-top" alt="Mufasa: El rey león"></a>
-                        <div class="card-body">
-                            <p>Mufasa: El rey león</p>
-                            <a href="peliculas/1.html" class="btn btn-sm btn-primary">Ver detalles</a>
+                <% for (let pelicula of parametrosComunes['listaPeliculas']) { %>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="card text-center pt-2">
+                            <a href="/pelicula/<%= pelicula['_id'] %>"><img src="<%= pelicula['imagen'] %>" class="card-img-top" alt=""></a>
+                            <div class="card-body">
+                                <p><%= pelicula['titulo'] %></p>
+                                <a href="/pelicula/<%= pelicula['_id'] %>" class="btn btn-sm btn-primary">Ver detalles</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="card text-center pt-2">
-                        <a href="peliculas/2.html"><img src="carteleras/2.jpg" class="card-img-top" alt="Conclave"></a>
-                        <div class="card-body">
-                            <p>Conclave</p>
-                            <a href="peliculas/2.html" class="btn btn-sm btn-primary">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="card text-center pt-2">
-                        <a href="peliculas/3.html"><img src="carteleras/3.jpg" class="card-img-top" alt="Gladiator II"></a>
-                        <div class="card-body">
-                            <p>Gladiator II</p>
-                            <a href="peliculas/3.html" class="btn btn-sm btn-primary">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="card text-center pt-2">
-                        <a href="peliculas/1.html"><img src="carteleras/1.jpg" class="card-img-top" alt="Mufasa: El rey león"></a>
-                        <div class="card-body">
-                            <p>Mufasa: El rey león</p>
-                            <a href="peliculas/1.html" class="btn btn-sm btn-primary">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="card text-center pt-2">
-                        <a href="peliculas/2.html"><img src="carteleras/2.jpg" class="card-img-top" alt="Conclave"></a>
-                        <div class="card-body">
-                            <p>Conclave</p>
-                            <a href="peliculas/2.html" class="btn btn-sm btn-primary">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="card text-center pt-2">
-                        <a href="peliculas/3.html"><img src="carteleras/3.jpg" class="card-img-top" alt="Gladiator II"></a>
-                        <div class="card-body">
-                            <p>Gladiator II</p>
-                            <a href="peliculas/3.html" class="btn btn-sm btn-primary">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="card text-center pt-2">
-                        <a href="peliculas/1.html"><img src="carteleras/1.jpg" class="card-img-top" alt="Mufasa: El rey león"></a>
-                        <div class="card-body">
-                            <p>Mufasa: El rey león</p>
-                            <a href="peliculas/1.html" class="btn btn-sm btn-primary">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="card text-center pt-2">
-                        <a href="peliculas/2.html"><img src="carteleras/2.jpg" class="card-img-top" alt="Conclave"></a>
-                        <div class="card-body">
-                            <p>Conclave</p>
-                            <a href="peliculas/2.html" class="btn btn-sm btn-primary">Ver detalles</a>
-                        </div>
-                    </div>
-                </div>
-
+                <% } %>
             </div>
 
         </section>
