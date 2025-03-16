@@ -1,7 +1,19 @@
 <%- include('cabecera', {}); %>
 
 <body onload="actualizarReloj()">
-    <%- include('navegacion', {}); %>
+    <%- include('navegacion', {});  %>
+
+    <% 
+    // Se busca el identificador de la pelicula en el listado para obtener los datos. 
+    var detallesPelicula;
+    for (let pelicula of parametrosComunes['listaPeliculas']) {
+        if (pelicula['_id'].toString()==idPelicula){
+            detallesPelicula = pelicula;
+            break;
+        }
+    }
+    console.log(detallesPelicula)
+    %>
     <!--  -->    
     <main>
         <div class="pelicula row">
@@ -9,27 +21,24 @@
                 <div class="pelicula_detalles col-8 col-print-9">
                     <div class="row">
                         <div class="pelicula_dato_key col">Título</div>
-                        <div class="pelicula_dato_value col">Mufasa: El rey león</div>
+                        <div class="pelicula_dato_value col"><%= detallesPelicula['titulo'] %></div>
                     </div>
                     <div class="row">
                         <div class="pelicula_dato_key col">Año</div>
-                        <div class="pelicula_dato_value col">2024</div>
+                        <div class="pelicula_dato_value col"><%= detallesPelicula['anio'] %></div>
                     </div>
                     <div class="row">
                         <div class="pelicula_dato_key col">Director</div>
-                        <div class="pelicula_dato_value col">Barry Jenkins</div>
+                        <div class="pelicula_dato_value col"><%= detallesPelicula['director'] %></div>
                     </div>
                     <div class="row">
-                        <div class="pelicula_dato_key col">País</div>
-                        <div class="pelicula_dato_value col">Estados Unidos</div>
-                    </div>
-                    <div class="row">
-                        <div class="pelicula_dato_key col">Duración</div>
-                        <div class="pelicula_dato_value col">120 min</div>
+                        <div class="pelicula_dato_key col">Género</div>
+                        <div class="pelicula_dato_value col"><%= detallesPelicula['genero'] %></div>
                     </div>
                     <div class="row">
                         <div class="pelicula_dato_key col">Premios en ediciones anteriores</div>
                         <div class="pelicula_dato_value col">
+                            SIN HACER TODAVIA
                             <table>
                                 <thead>
                                 </thead>
@@ -52,14 +61,14 @@
 
                 </div>
                 <div class="pelicula_cartelera col-4 col-print-3">
-                    <img src="../carteleras/1.jpg" class="cartelera" alt="Mufasa: El rey león">
+                    <img src="<%= detallesPelicula['imagen'] %>" class="cartelera" alt="<%= detallesPelicula['titulo'] %>">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col">
                     <section>
                         <h2>Sinopsis</h2>
-                        <p>Rafiki, Timón y Pumba le cuentan la leyenda de Mufasa a la joven cachorro de león Kiara, hija de Simba y Nala. La historia se cuenta en flashbacks y presenta a Mufasa como un cachorro huérfano, perdido y solo hasta que conoce a un simpático león llamado Taka, heredero de un linaje real. Este encuentro casual pone en marcha un viaje de un extraordinario grupo de inadaptados que buscan su destino. Y sus vínculos se pondrán a prueba mientras trabajan juntos para escapar de un enemigo amenazador y letal. Precuela de 'El rey león' (2019).</p>
+                        <p><%= detallesPelicula['sinopsis'] %></p>
                     </section>
                 </div>
             </div>
