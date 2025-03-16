@@ -19,30 +19,18 @@
                 <h2>Películas destacadas</h2>
             </header>
             <div id="carouselPeliculas" class="carousel slide" data-bs-theme="dark">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselPeliculas" data-bs-slide-to="0" class="active" ></button>
-                  <button type="button" data-bs-target="#carouselPeliculas" data-bs-slide-to="1" ></button>
-                  <button type="button" data-bs-target="#carouselPeliculas" data-bs-slide-to="2"></button>
-                </div>
+
                 <div class="carousel-inner text-center">
-                  <div class="carousel-item active ">
-                    <a href="peliculas/1.html"><img src="carteleras/1.jpg" class="cartelera" alt=""></a>
-                    <div class="carousel-caption">
-                        <p>Mufasa: El rey león</p>
-                      </div>
-                  </div>
-                  <div class="carousel-item ">
-                    <a href="peliculas/2.html"><img src="carteleras/2.jpg" class="cartelera" alt=""></a>
-                    <div class="carousel-caption d-none d-md-block">
-                      <p>Conclave</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <a href="peliculas/3.html"><img src="carteleras/3.jpg" class="cartelera" alt=""></a>
-                    <div class="carousel-caption d-none d-md-block">
-                      <p>Gladiator II</p>
-                    </div>
-                  </div>
+                <% 
+                    var primeraPelicula = true;
+                    for (let pelicula of parametrosComunes['listaPeliculas']) { %>
+                        <div class="carousel-item <% if (primeraPelicula==true){ %> active<% primeraPelicula=false; }%>">
+                            <a href="/pelicula/<%= pelicula['_id'] %>"><img src="<%= pelicula['imagen'] %>" class="cartelera" alt=""></a>
+                            <div class="carousel-caption">
+                                <p><%= pelicula['titulo'] %></p>
+                            </div>
+                        </div>                   
+                    <%} %>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselPeliculas" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
